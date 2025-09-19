@@ -19,4 +19,4 @@ run: $(TARGET)
 	./$(TARGET)
 
 clean:
-	rm -f $(OBJS) $(TARGET) dados_comparacao.dat comparacao.png
+	rm -f $(OBJS) $(TARGET) dados_analise.dat analise.png

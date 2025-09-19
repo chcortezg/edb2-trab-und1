@@ -67,7 +67,7 @@ int main() {
     double kBin = temposBin[0] / f_logN(tamanhos[0]);
 
     // salvando dados em arquivo para plotagem no gnuplot
-    ofstream arq("dados_comparacao.dat");
+    ofstream arq("dados_analise.dat");
     for (int i = 0; i < numTamanhos; i++) {
         arq << tamanhos[i] << " "
             << temposSeq[i] << " "
@@ -83,10 +83,10 @@ int main() {
         "set title 'Comparação de complexidades'; "
         "set xlabel 'Tamanho da entrada'; set ylabel 'Tempo (s)'; "
         "set logscale y; set grid; "
-        "plot 'dados_comparacao.dat' using 1:2 with linespoints lw 2 pt 7 title 'Busca sequencial experimental', "
-        "'dados_comparacao.dat' using 1:3 with linespoints lw 2 pt 7 title 'Busca binária experimental', "
-        "'dados_comparacao.dat' using 1:4 with lines lw 2 title 'O(n) teórico', "
-        "'dados_comparacao.dat' using 1:5 with lines lw 2 title 'O(log n) teórico'\""
+        "plot 'dados_analise.dat' using 1:2 with linespoints lw 2 pt 7 title 'Busca sequencial experimental', "
+        "'dados_analise.dat' using 1:3 with linespoints lw 2 pt 7 title 'Busca binária experimental', "
+        "'dados_analise.dat' using 1:4 with lines lw 2 title 'O(n) teórico', "
+        "'dados_analise.dat' using 1:5 with lines lw 2 title 'O(log n) teórico'\""
     );
 
     cout << "Gráfico gerado: analise.png \n";
