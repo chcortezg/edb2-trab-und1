@@ -79,14 +79,18 @@ int main() {
 
     // gerando gráfico no gnuplot
     system(
-        "gnuplot -e \"set terminal png size 1000,600; set output 'analise.png'; "
+        "gnuplot -e \""
+        "set terminal pngcairo size 1200,800 enhanced font 'Arial,14'; "
+        "set output 'analise.png'; "
         "set title 'Comparação de complexidades'; "
         "set xlabel 'Tamanho da entrada'; set ylabel 'Tempo (s)'; "
-        "set logscale y; set grid; "
-        "plot 'dados_analise.dat' using 1:2 with linespoints lw 2 pt 7 title 'Busca sequencial experimental', "
-        "'dados_analise.dat' using 1:3 with linespoints lw 2 pt 7 title 'Busca binária experimental', "
-        "'dados_analise.dat' using 1:4 with lines lw 2 title 'O(n) teórico', "
-        "'dados_analise.dat' using 1:5 with lines lw 2 title 'O(log n) teórico'\""
+        "set logscale y; "
+        "set grid lw 1 lc rgb '#d3d3d3'; "
+        "set key left top; "
+        "plot 'dados_analise.dat' using 1:2 with linespoints lw 3 pt 7 ps 1.5 linecolor rgb '#1f77b4' title 'Busca sequencial experimental', "
+        "'dados_analise.dat' using 1:3 with linespoints lw 3 pt 7 ps 1.5 linecolor rgb '#ff7f0e' title 'Busca binária experimental', "
+        "'dados_analise.dat' using 1:4 with lines lw 3 linecolor rgb '#2ca02c' title 'O(n) teórico', "
+        "'dados_analise.dat' using 1:5 with lines lw 3 linecolor rgb '#d62728' title 'O(log n) teórico'\""
     );
 
     cout << "Gráfico gerado: analise.png \n";
