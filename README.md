@@ -11,10 +11,13 @@ Este programa mede o tempo de execução de algoritmos de busca sequencial e bin
 - `analise.png`: gráfico final plotado com gnuplot
 
 ## Uso
-1. Instale o gnuplot.
-2. Compile:
+1. Clone o repositório no seu dispositivo:
+   ```bash
+   git clone https://github.com/chcortezg/edb2-trab-und1
+   ```
+4. Dentro do repositório do progama, compile:
    ```bash
    make
-3. Execute:
+5. Por fim, execute:
    ```bash
    ./analise
